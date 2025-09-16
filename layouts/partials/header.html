@@ -97,6 +97,7 @@
                 {{- end }}
 
                 {{- $lang := .Lang}}
+                {{- $langName := .Site.Language.LanguageName}}
                 {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
                 {{- with site.Home.Translations }}
                 <ul class="lang-switch">
@@ -106,10 +107,11 @@
                     <li>
                         <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
                             aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
-                            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
-                            {{- .Language.LanguageName | emojify -}}
+                            <!-- 显示当前语言，而不是选择器的语言 -->
+                            {{- if (and site.Params.displayFullLangName ($langName)) }}
+                            {{- $langName | emojify -}}
                             {{- else }}
-                            {{- .Lang | title -}}
+                            {{- $lang | title -}}
                             {{- end -}}
                         </a>
                     </li>

@@ -15,7 +15,7 @@ languages:
     languageName: English
     weight: 1
   zh:
-    languageName: 简体中文
+    languageName: 中文
     weight: 2
     params:
       date_format: "2006年1月2日"
@@ -27,7 +27,7 @@ languages:
         - name: "博客"
           url: "/blog/"
           weight: 2
-        - name: "Showcase"
+        - name: "示例"
           url: "/showcase/"
           weight: 3
         - name: "发表论文"
