@@ -4,9 +4,14 @@ title: 'Tongyi DeepResearch: A New Era of Open-Source AI Researchers'
 showtoc: true
 ---
 
+{{< button href="https://github.com/Alibaba-NLP/DeepResearch" label="GITHUB" external=true >}}
+{{< button href="https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B" label="HUGGINGFACE" external=true >}}
+{{< button href="https://modelscope.cn/models/iic/Tongyi-DeepResearch-30B-A3B" label="MODELSCOPE" external=true >}}
+{{< button href="https://tongyi-agent.github.io/showcase/" label="SHOWCASE" external=true >}}
+
 {{< figure src="/img/introducing-tongyi-deep-research/final_results.png#center" width="100%">}}
 
-## From Chatbot to Agent – Achieving SOTA with an Agentic 30B Model
+## From Chatbot to Autonomous Agent
 
 We are proud to present **Tongyi DeepResearch**, the first fully open-source Web Agent to achieve performance on par with OpenAI's DeepResearch across a comprehensive suite of benchmarks. Tongyi DeepResearch demonstrates state-of-the-art results, scoring 32.9 on the academic reasoning task Humanity's Last Exam (HLE), 43.4 on BrowseComp and 46.7 on BrowseComp-ZH in extremely complex information-seeking tasks, and achieving a score of 75 on the user-centric xbench-DeepSearch benchmark, systematically outperforming all existing proprietary and open-source Deep Research agents.
 
