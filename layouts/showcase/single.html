@@ -206,14 +206,6 @@
         window.open(item.link, "_blank");
       });
 
-      // 播放按钮点击事件
-      const playButton = card.querySelector(".play-button");
-      playButton.addEventListener("click", (e) => {
-        e.stopPropagation(); // 阻止冒泡，避免同时触发卡片跳转
-        alert("播放视频：" + item.title);
-        // 这里可以替换为播放视频、打开弹窗等逻辑
-      });
-
       container.appendChild(card);
     });
     document.getElementsByClassName('main')[0].style.maxWidth = '1200px';
