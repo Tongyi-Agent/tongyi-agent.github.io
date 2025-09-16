@@ -20,8 +20,13 @@
 .publication .pub-title a:hover {
   text-decoration: underline;
 }
+.publication .pub-data a {
+  text-decoration: none;
+  color: #0366d6;
+  font-size: 0.6em;
+}
 .publication .pub-authors {
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: #666;
   margin: 0;
 }
