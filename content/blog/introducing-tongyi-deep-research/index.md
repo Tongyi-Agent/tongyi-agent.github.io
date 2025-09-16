@@ -1,7 +1,7 @@
 ---
 date: '2025-09-16T14:39:24+08:00'
-draft: true
 title: 'Tongyi DeepResearch: A New Era of Open-Source AI Researchers'
+showtoc: true
 ---
 
 {{< figure src="/img/introducing-tongyi-deep-research/final_results.png#center" width="100%">}}
