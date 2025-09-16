@@ -1,0 +1,101 @@
+baseURL: tongyi-agent.github.io
+title: Tongyi Deep Research
+languageCode: "en-us"
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    languageName: English
+    weight: 1
+  zh:
+    languageName: 简体中文
+    weight: 2
+    params:
+      date_format: "2006年1月2日"
+    menu:
+      main:
+        # - name: "首页"
+        #   url: "/"
+        #   weight: 1
+        - name: "博客"
+          url: "/blog/"
+          weight: 2
+        - name: "Showcase"
+          url: "/showcase/"
+          weight: 3
+        - name: "发表论文"
+          url: "/publication/"
+          weight: 4
+        - name: "关于"
+          url: "/about/"
+          weight: 5
+        # - name: "搜索"
+        #   url: "/search/"
+        #   weight: 6
+
+params:
+  env: production
+  author: "Deep Research Team, Tongyi Lab"
+  description: "Deep Research"
+  keywords: ["AI Search", "RAG", "Deep Research"]
+
+  # site settings
+  ShowLanguageSelector: true
+  defaultTheme: light
+  disableThemeToggle: true
+  displayFullLangName: true
+  disableSpecialFirstPost: false
+  disableScrollToTop: false
+  hideSummary: true
+
+  # page settings
+  ShowToc: false
+  ShowBreadCrumbs: false
+  ShowWordCount: true
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+
+  assets:
+    disable_hljs: true
+    favicon: "/img/logo.png"
+
+  label:
+    text: "Tongyi Deep Research"
+    icon: "/img/logo.png"
+    iconHeight: 30
+
+menu:
+  main:
+    # - name: "Home"
+    #   url: "/"
+    #   weight: 1
+    - name: "Blog"
+      url: "/blog/"
+      weight: 2
+    - name: "Showcase"
+      url: "/showcase/"
+      weight: 3
+    - name: "Publication"
+      url: "/publication/"
+      weight: 4
+    - name: "About"
+      url: "/about/"
+      weight: 5
+    # - name: "Search"
+    #   url: "/search/"
+    #   weight: 6
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search

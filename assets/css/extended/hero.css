@@ -1,0 +1,63 @@
+/* --- Hero 区 --- */
+.hero {
+  position: relative;
+  width: 100vw;       /* 全屏宽 */
+  height: 100vh;      /* 全屏高 */
+  margin-left: -50vw;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+  top: -24px;
+  background: url('/img/hero.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* 导航栏悬浮在hero上方 */
+.home-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+}
+
+/* 首页导航栏文字颜色为白色 */
+.home-header .nav a,
+.home-header .nav li,
+.home-header .nav span,
+.home-header .logo a,
+.home-header button#theme-toggle,
+.home-header .lang-switch a {
+  color: white !important;
+}
+

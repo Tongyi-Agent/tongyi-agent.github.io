@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <title>Judicial and statutory law interpretation</title>
+    <link rel="stylesheet" href="/css/show_case_card.css">
+</head>
+<body>
+  <div class="terminal-container">
+    <!-- macOS 窗口标题栏 -->
+    <div class="window-title-bar">
+      <div class="window-controls">
+        <div class="window-control close"></div>
+        <div class="window-control minimize"></div>
+        <div class="window-control maximize"></div>
+      </div>
+      <div class="window-title">Judicial and statutory law interpretation</div>
+      <div class="window-controls">
+        <div class="window-control"></div>
+        <div class="window-control"></div>
+        <div class="window-control"></div>
+      </div>
+    </div>
+    <!-- 主要内容区域 -->
+    <div class="terminal-content">
+      <!-- 左侧面板 -->
+      <div class="left-panel" id="leftPanel">
+        <!-- 初始化动画将被插入到这里 -->
+        <div class="agent-header">
+          <span class="agent-name">Deep Research Agent</span>
+          <span class="status-badge">Running</span>
+        </div>
+        <!-- 首次提出的问题（初始化代码） -->
+        <div class="command-block">
+          <div class="command-header">
+            <svg class="command-icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span class="command-text"></span>
+          </div>
+        </div>
+      </div>
+      <!-- 右侧面板 -->
+      <div class="right-panel">
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-prompt">
+            <div class="prompt-user"></div>
+          </div>
+        </div>
+        <div class="terminal-footer">
+          <div class="progress-info">
+            <span id="progressText">0/0</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="play-controls">
+            <!-- 重置/播放按钮 -->
+            <div class="play-button" id="playButton" title="Reset/Restart">
+              <!-- 重新开始图标 (循环箭头) -->
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" fill="#000000"/>
+              </svg>
+            </div>
+            <!-- 暂停/恢复按钮 -->
+            <div class="pause-button" id="pauseButton" title="Pause/Resume">
+               <!-- 暂停图标 (默认) -->
+              <svg width="16" height="16" viewBox="0 0 24 24" class="pause-icon">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="#000000"/>
+              </svg>
+              <!-- 播放图标 (隐藏) -->
+              <svg width="16" height="16" viewBox="0 0 24 24" class="play-icon" style="display: none;">
+                <path d="M8 5v14l11-7z" fill="#000000"/>
+              </svg>
+            </div>
+          </div>
+          <div class="speed-control">
+            <span>Speed:</span>
+            <button class="speed-button" data-speed="500">0.5x</button>
+            <button class="speed-button active" data-speed="1000">1x</button>
+            <button class="speed-button" data-speed="2000">2x</button>
+            <button class="speed-button" data-speed="4000">4x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="/js/show_case_card.js"></script>
+    <script>
+        rander_data('/data/5_processed_wushu.json');
+    </script>
+
+</body>
+</html>

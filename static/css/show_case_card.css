@@ -1,0 +1,564 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* --- 主题颜色修改 --- */
+    body {
+      font-family: 'SF Mono', 'Courier New', monospace;
+      /* 背景色改为白色 */
+      background-color: #ffffff;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .terminal-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      /* 背景改为浅灰色 */
+      background: #f5f5f5;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 调整阴影 */
+      position: relative;
+      border: 1px solid #ddd; /* 添加边框 */
+    }
+
+    /* macOS 窗口标题栏 */
+    .window-title-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      /* 背景改为通义紫色 */
+      background: #615ced;
+      /* 字体颜色改为白色 */
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .window-control {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .close { background: #f44336; }
+    .minimize { background: #ff9800; }
+    .maximize { background: #4caf50; }
+
+    .window-title {
+      font-weight: 500;
+    }
+
+    /* 主要内容区域 */
+    .terminal-content {
+      display: flex;
+      height: calc(100vh - 120px);
+      overflow: hidden;
+    }
+
+    /* 左侧面板 */
+    .left-panel {
+      flex: 1;
+      padding: 20px;
+      /* 背景改为白色 */
+      background: #ffffff;
+      overflow-y: auto;
+      border-right: 1px solid #ddd;
+      position: relative; /* 为了绝对定位初始化动画 */
+    }
+
+    .agent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .agent-name {
+      font-weight: 500;
+      /* 链接色改为深蓝色 */
+      color: #1976d2;
+    }
+
+    .status-badge {
+      /* 状态背景色改为浅蓝色 */
+      background: #bbdefb;
+      /* 字体颜色改为深蓝色 */
+      color: #1976d2;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .command-block {
+      /* 背景改为浅灰色 */
+      background: #f7f7ff;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 20px 0;
+      /* 左边框颜色改为深蓝色 */
+      border-left: 4px solid #1976d2;
+    }
+
+    .command-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      /* 字体颜色改为深灰色 */
+      color: #666666;
+             word-wrap: break-word;           /* 允许长单词或URL换行 */
+      overflow-wrap: break-word;       /* 等同于 word-wrap，现代标准 */
+      white-space: normal;             /* 允许换行（防止被设置为 nowrap） */
+      overflow: auto;                  /* 防止内容溢出 */
+    }
+    .command-text-main{
+      word-wrap: break-word;           /* 允许长单词或URL换行 */
+      overflow-wrap: break-word;       /* 等同于 word-wrap，现代标准 */
+      white-space: normal;             /* 允许换行（防止被设置为 nowrap） */
+      overflow: auto;                  /* 防止内容溢出 */
+    }
+
+    .command-icon {
+      width: 16px;
+      height: 16px;
+      /* 图标颜色改为深蓝色 */
+      fill: #1976d2;
+    }
+
+    .command-text {
+      font-family: 'SF Mono', 'Courier New', monospace;
+      font-size: 14px;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+    }
+
+    .command-time {
+      font-size: 12px;
+      /* 字体颜色改为深灰色 */
+      color: #666666;
+      margin-left: 8px;
+    }
+
+    .success {
+      /* 成功颜色改为绿色 */
+      color: #388e3c;
+    }
+
+    .thought-section {
+      margin: 20px 0;
+    }
+
+    .thought-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      /* 字体颜色改为深灰色 */
+      color: #666666;
+    }
+
+    .thought-toggle {
+      width: 16px;
+      height: 16px;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+      /* 箭头颜色改为深绿色 */
+      fill: #388e3c;
+    }
+
+    .thought-toggle.open {
+      transform: rotate(180deg);
+    }
+
+    .thought-content {
+      display: none;
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.8;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+    }
+
+    .thought-content.visible {
+      display: block;
+    }
+
+    /* 右侧面板 */
+    .right-panel {
+      flex: 1;
+      position: relative;
+      /* 背景改为浅灰色 */
+      background: #f5f5f5;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .terminal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      /* 背景改为白色 */
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .terminal-title {
+      font-size: 14px;
+      font-weight: 500;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+    }
+
+    .terminal-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .control-button {
+      padding: 4px 8px;
+      background: transparent;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .control-button:hover {
+      /* 悬停背景色改为浅灰色 */
+      background: #f0f0f0;
+    }
+
+    .ui-mode {
+      /* UI模式按钮背景色改为浅蓝色 */
+      background: #bbdefb;
+      /* 字体颜色改为深蓝色 */
+      color: #1976d2;
+    }
+
+    .raw-mode {
+      /* Raw模式按钮背景色改为浅紫色 */
+      background: #e1bee7;
+      /* 字体颜色改为深紫色 */
+      color: #7b1fa2;
+    }
+
+    .terminal-body {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      position: relative;
+      /* 背景改为白色 */
+      background: #ffffff;
+    }
+
+    .terminal-prompt {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      /* 字体颜色改为深灰色 */
+      color: #666666;
+    }
+
+    .prompt-user {
+      /* 用户名颜色改为深蓝色 */
+      color: #1976d2;
+    }
+
+    .prompt-host {
+      /* 主机名颜色改为深绿色 */
+      color: #388e3c;
+    }
+
+    .terminal-command {
+      /* 背景改为浅灰色 */
+      background: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+    }
+
+    .command-line {
+      font-family: 'SF Mono', 'Courier New', monospace;
+      font-size: 14px;
+      /* 字体颜色改为黑色 */
+      color: #000000;
+      word-break: break-all;
+      width: 96.5%;
+      margin-left: 3.4%;
+    }
+
+    .command-keyword {
+      /* 关键字颜色改为深绿色 */
+      color: #388e3c;
+    }
+
+    .command-operator {
+      /* 操作符颜色改为橙色 */
+      color: #f57c00;
+    }
+
+    .command-string {
+      /* 字符串颜色改为深蓝色 */
+      color: #1976d2;
+    }
+
+    .command-function {
+      /* 函数颜色改为深绿色 */
+      color: #161616;
+    }
+
+    .terminal-footer {
+      padding: 12px 16px;
+      /* 背景改为白色 */
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      /* 字体颜色改为深灰色 */
+      color: #666666;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      /* 背景改为浅灰色 */
+      background: #e0e0e0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      /* 进度条颜色改为深蓝色 */
+      background: #1976d2;
+      width: 0%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .play-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .play-button, .pause-button {
+      width: 24px;
+      height: 24px;
+  border-radius: 50%;
+  /* 背景改为浅灰色 */
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* 边框改为浅灰色 */
+  border: 1px solid #ddd;
+}
+
+/* --- 新增或修改的样式 --- */
+/* 暂停按钮处于暂停状态时的样式 */
+.pause-button.paused {
+    /* 暂停时背景色改为浅蓝色 */
+    background-color: #bbdefb;
+}
+
+.pause-button.paused svg path {
+    /* 暂停时图标颜色改为深蓝色 */
+    fill: #1976d2;
+}
+/* --- 结束新增/修改样式 --- */
+
+.speed-control {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.speed-button {
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* 字体颜色改为深灰色 */
+  color: #666666;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.speed-button:hover {
+  /* 悬停背景色改为浅灰色 */
+  background: #f0f0f0;
+}
+
+.speed-button.active {
+  /* 激活按钮背景色改为深蓝色 */
+  background: #1976d2;
+  /* 激活按钮字体颜色改为白色 */
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 初始化提示动画 - 放在左侧面板内 */
+.initial-prompt {
+  position: absolute; /* 相对于 left-panel 定位 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 背景改为半透明白色 */
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeInOut 3s forwards;
+}
+
+.prompt-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 20px;
+  /* 背景改为白色 */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.prompt-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  /* 标题颜色改为深绿色 */
+  color: #388e3c;
+}
+
+.prompt-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  /* 描述颜色改为深灰色 */
+  color: #666666;
+}
+
+.countdown {
+  font-size: 48px;
+  font-weight: bold;
+  /* 倒计时颜色改为深绿色 */
+  color: #388e3c;
+  margin-bottom: 20px;
+  animation: pulse 1s infinite alternate;
+}
+
+.action-button {
+  padding: 10px 20px;
+  /* 按钮背景色改为深蓝色 */
+  background: #1976d2;
+  /* 按钮字体颜色改为白色 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  /* 按钮悬停背景色改为更深的蓝色 */
+  background: #1565c0;
+}
+
+/* 搜索图标样式 */
+.search-icon {
+    /* 搜索图标颜色改为深灰色 */
+    color: #666666;
+    margin-right: 5px;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@media (max-width: 1024px) {
+  .terminal-content {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+    border-right: none;
+  }
+  .right-panel {
+    border-top: 1px solid #ddd;
+  }
+}
+
+.command-type-label {
+    display: inline-flex; /* 使用 inline-flex 使其像行内元素但能控制内部布局 */
+    align-items: center; /* 垂直居中图标和文字 */
+    justify-content: center; /* 水平居中内容（如果需要） */
+    gap: 4px; /* 图标和文字之间的间距 */
+    /* 美观样式 */
+    /* 背景改为白色 */
+    background-color: #ffffff;
+    /* 字体颜色改为深灰色 */
+    color: #444444;
+    font-size: 11px; /* 稍小的字体 */
+    font-weight: 600; /* 稍微加粗 */
+    padding: 3px 8px; /* 上下内边距小一些，左右大一些 */
+    border-radius: 12px; /* 大圆角 */
+    /* 边框改为浅灰色 */
+    border: 1px solid #ccc;
+    /* 布局和定位 */
+    margin-top: 8px; /* 与上方内容的间距 */
+    align-self: flex-start; /* 使其靠左对齐，而不是拉伸填充容器宽度 */
+    /* 可选：添加轻微的阴影效果 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}

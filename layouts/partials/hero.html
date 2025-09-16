@@ -1,0 +1,12 @@
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    {{ if eq "en" .Page.Lang}}
+      <h1>Tongyi Deep Research</h1>
+      <p>Uncover deeper truths, drive smarter decisions.</p>
+    {{ else if eq "zh" .Page.Lang}}
+      <h1>通义 Deep Research</h1>
+      <p>洞察更深层的信息，驱动更智能的决策。</p>
+    {{ end }}
+  </div>
+</section>

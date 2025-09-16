@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ partial "blog-list.html" . }}
+  {{ if eq "zh" .Page.Lang}}
+    {{ partial "cards.html" . }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,19 @@
+{{ $title := .Get "title" }}
+{{ $desc := .Get "desc" }}
+{{ $image := .Get "image" }}
+{{ $link := .Get "link" }}
+
+<div class="card" onclick="window.open('{{ $link }}', '_blank')" style="cursor: pointer;">
+  <div class="image-wrapper">
+    <img src="{{ $image }}" alt="{{ $title }}">
+    <button class="play-button" aria-label="Play" onclick="event.stopPropagation(); alert('播放视频：{{ $title }}')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{{ $title }}</h3>
+    <p class="card-desc">{{ $desc }}</p>
+  </div>
+</div>

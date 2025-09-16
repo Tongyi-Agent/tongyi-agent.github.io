@@ -1,0 +1,40 @@
+.post-content a.btn {
+    color: var(--primary) !important;
+    background-color: rgba(0, 0, 0, 0.05);
+    -webkit-backdrop-filter: blur(1.5rem);
+    backdrop-filter: blur(1.5rem);
+    padding: 0.5em 1em 0.5em 1em;
+    margin-top: var(--content-gap);
+    margin-bottom: var(--content-gap);
+    margin-right: .8333333333em;
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    line-height: 1;
+    /* font-size: 1em; */
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    box-shadow: none;
+}
+
+.post-content a.btn:hover:not(:disabled) {
+    color: rgba(0, 0, 0, 1) !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1 !important;
+}
+
+.post-content a.btn.external {
+    padding-right: 1em;
+}
+
+.post-content a.btn.external:after {
+    position: relative;
+    right: -0.2em;
+    content: "↗";
+    font-size: 1.166667em;
+    font-weight: normal;
+    margin-left: -0.0625em;
+}

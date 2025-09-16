@@ -1,0 +1,34 @@
+.publication h1 {
+  margin: 60px auto 40px;
+}
+.publication .pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 30px;
+}
+.publication .pub-item {
+  margin-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+.publication .pub-item:last-child {
+  border-bottom: none;
+}
+.publication .pub-title a {
+  text-decoration: none;
+  color: #0366d6;
+}
+.publication .pub-title a:hover {
+  text-decoration: underline;
+}
+.publication .pub-authors {
+  font-size: 0.8em;
+  color: #666;
+  margin: 0;
+}
+.publication .section-title {
+  margin: 32px 0 12px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}

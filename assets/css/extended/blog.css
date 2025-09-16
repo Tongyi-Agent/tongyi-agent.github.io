@@ -1,0 +1,15 @@
+.blog-list-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+:root {
+  --nav-width: 1200px;
+  --main-width: 900px;
+}
+
+.page-header,
+.post-entry {
+  margin-left: 90px;
+  margin-right: 90px;
+}

@@ -1,0 +1,223 @@
+{{ define "main" }}
+<div class="page-container">
+
+  </div>
+
+  <h1 class="title">Deep Research Showcase</h1>
+
+  <div class="cards-container" id="cardsContainer"></div>
+  <style>
+    .main {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    } */
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 40px auto;
+      font-weight: 600;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      width: 350px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      z-index: 10;
+      border: none;
+      outline: none;
+    }
+
+    .card:hover .play-button {
+      opacity: 1;
+    }
+
+    .card:hover img {
+      opacity: 0.8;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .page-container {
+      max-width: 1200px;  /* 与卡片容器保持一致 */
+      margin: 0 auto;     /* 居中显示 */
+      padding: 0 20px;    /* 左右内边距 */
+    }
+    #menu{
+        margin-left: 20rem;
+    }
+    header{
+        padding: 0 0;
+    }
+  </style>
+
+
+  <script>
+    // 模拟 JSON 数据
+    let host = window.location.origin;
+    const cardsData = [
+      {
+        id: 1,
+        title: "Complex reasoning and long multi-step reasoning",
+        desc: "Complex multi-step reasoning tasks requiring web search, information synthesis across sources, and tool orchestration to solve real-world queries with dynamic, time-sensitive data.",
+        image: "/img/showcase/image_1.jpeg",
+        link: "/showcase/pages/show_1.html"
+      },
+      {
+        id: 2,
+        title: "Daily life planning and decision-making",
+        desc: "Daily tasks exhibit real-world complexity requiring specific factual retrieval, multi-step reasoning, and precise numerical comparisons across temporal and geographical contexts with exact formatting constraints.",
+        image: "/img/showcase/image_2.png",
+        link: "/showcase/pages/show_2.html"
+      },
+      {
+        id: 3,
+        title: "PhD‑level, cross‑disciplinary Q&A",
+        desc: "Problems requiring deep multi-step reasoning across interconnected mathematical and scientific domains, demanding synthesis of advanced theoretical knowledge with computational analysis.",
+        image: "/img/showcase/image_3.png",
+        link: "/showcase/pages/show_3.html"
+      },
+      {
+        id: 4,
+        title: "Detailed and realistic travel itineraries",
+        desc: "旅行规划问题具有高度的个性化和约束复杂性，需要在地理空间、时间窗口、预算限制和个人偏好等多维约束下寻找最优解，呈现出组合优化与开放式决策并存的特征。",
+        image: "/img/showcase/image_4.png",
+        link: "/showcase/pages/show_4.html"
+      },
+      {
+        id: 5,
+        title: "Judicial and statutory law interpretation",
+        desc: "法律问题通常涉及多维度论证需求，需要结合具体法条、判例和学理支撑，具有高度专业性、论证链条长、需要权威来源佐证",
+        image: "/img/showcase/image_5.png",
+        link: "/showcase/pages/show_5.html"
+      },
+        {
+        id: 6,
+        title: "Multi‑Scenario Research Writing",
+        desc: " Summarize recent research progress in reinforcement learning focused on enabling agents to explore efficiently and proactively under conditions of sparse rewards and constraints, respectively. Additionally, analyze and discuss the potential implications and insights this research provides for trajectory planning problems.",
+        image: "/img/showcase/image_6.png",
+        link: "/showcase/pages/show_6.html"
+      },
+
+    ];
+
+    // 动态生成卡片
+    const container = document.getElementById("cardsContainer");
+
+    cardsData.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="image-wrapper">
+          <img src="${item.image}" alt="${item.title}">
+          <button class="play-button" aria-label="Play">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-desc">${item.desc}</p>
+        </div>
+      `;
+
+      // 添加点击事件跳转
+      card.addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      // 播放按钮点击事件
+      const playButton = card.querySelector(".play-button");
+      playButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // 阻止冒泡，避免同时触发卡片跳转
+        alert("播放视频：" + item.title);
+        // 这里可以替换为播放视频、打开弹窗等逻辑
+      });
+
+      container.appendChild(card);
+    });
+    document.getElementsByClassName('main')[0].style.maxWidth = '1200px';
+
+  </script>
+
+{{ end }}
