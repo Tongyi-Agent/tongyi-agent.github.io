@@ -316,7 +316,7 @@ function rander_data(json_data) {
           // 清空左右面板内容，但保留左侧面板的初始结构（包括Initial Query）
           leftPanel.innerHTML = `
             <div class="agent-header">
-              <span class="agent-name">Deep Research Agent</span>
+              <span class="agent-name">DeepResearch Agent</span>
               <span class="status-badge">Running</span>
             </div>
             <!-- 首次提出的问题（已在HTML中静态定义） -->

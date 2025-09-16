@@ -4,7 +4,7 @@ hideMeta: true
 searchHidden: true
 ---
 
-## Deep Research Team, Tongyi Lab
+## DeepResearch Team, Tongyi Lab
 
 We are the DeepResearch team at Tongyi Lab, dedicated to exploring cutting-edge large language model and search technologies and applying them to real-world problems. We hold leading expertise in LLM-based RAG, AI search, and Agent systems. Our work has been widely published at top-tier conferences such as ACL, EMNLP, NAACL, ICML, and ICLR, earning multiple international benchmark distinctions and paper awards. We are a group of passionate developers and explorers, and we warmly welcome anyone interested in large models and real-world applications to join our team.
 
