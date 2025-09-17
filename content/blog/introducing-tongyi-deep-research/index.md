@@ -19,8 +19,6 @@ Beyond the model, we share a complete and battle-tested methodology fo
 
 ## Continual Pre-training and Post-training Empowered by Fully Synthetic Data
 
-The model's capabilities are built upon a novel, multi-stage data strategy designed to create vast and high-quality agentic training data without relying on costly human annotation.
-
 ### Continual Pre-training Data
 
 We introduce Agentic CPT to deep research agent training, creating powerful agentic foundation models for post-training. We propose AgentFounder, a systematic and scalable solution for large-scale data synthesis that creates a data flywheel with data from the post-training pipeline.
