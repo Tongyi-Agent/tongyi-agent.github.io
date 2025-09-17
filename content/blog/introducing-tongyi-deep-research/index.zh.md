@@ -148,17 +148,17 @@ IterResearch 范式的创建是为了解决Agent将所有信息堆积在一个�
 
 \[5\] [WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent](https://arxiv.org/pdf/2508.05748)
 
-\[6\] WebResearch: Unleashing reasoning capability in Long-Horizon Agents
+\[6\] [WebResearch: Unleashing reasoning capability in Long-Horizon Agents](https://arxiv.org/abs/2509.13309)
 
-\[7\] ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization
+\[7\] [ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization](https://arxiv.org/abs/2509.13313)
 
-\[8\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research
+\[8\] [WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](https://arxiv.org/abs/2509.13312)
 
-\[9\] WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning
+\[9\] [WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning](https://arxiv.org/abs/2509.13305)
 
-\[10\] Scaling Agents via Continual Pre-training
+\[10\] [Scaling Agents via Continual Pre-training](https://arxiv.org/abs/2509.13310)
 
-\[11\] Towards General Agentic Intelligence via Environment Scaling
+\[11\] [Towards General Agentic Intelligence via Environment Scaling](https://arxiv.org/abs/2509.13311)
 
 我们的团队长期致力于Deep Research的研发。过去六个月，我们每月持续发布一篇技术报告，迄今为止已发布五篇。今天，我们非常高兴地同时发布六篇新报告，并与社区分享我们的通义DeepResearch-30B-A3B模型。
 

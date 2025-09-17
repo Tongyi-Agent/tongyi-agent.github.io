@@ -43,11 +43,10 @@ To further reduce inconsistencies between the organized information stru
 
 Furthermore, we have developed an automated data engine to scale up the creation of PhD-level research questions. This engine begins with a multi-disciplinary knowledge base, generating "seed" QA pairs that require multi-source reasoning. Each seed then enters a self-guided loop of "iterative complexity upgrades", where a question-crafting agent is equipped with a powerful toolset including web search, academic retrieval, and a Python execution environment. In each iteration, the agent expands knowledge boundaries, deepens conceptual abstraction, and even constructs computational tasks, creating a virtuous cycle where the output of one round becomes the more complex input for the next, ensuring a controllable and systematic escalation of task difficulty.
 
-**Beyond High-Quality QA**
+**Bootstrapping Agent Capabilities with SFT Cold-starting**
 
-To maximize a model's capabilities in reasoning, planning, and tool use, we introduce IterResearch, an innovative Agent paradigm (see below for more details). By dynamically reconstructing a streamlined workspace in each turn, it replaces the traditional approach of endlessly accumulating context. This method fully unleashing the model's reasoning potential and ensuring that each of the model's decisions is the result of careful deliberation.
+To bootstrap the model's initial capabilities, we constructed a set of SFT trajectories via rejection sampling, based on the ReAct and IterResearch frameworks (for details, see below). On one hand, ReAct, as a classic and foundational multi-turn reasoning format, instills rich reasoning behaviors and reinforces the model's ability to adhere to structured formats. **On the other hand, we introduce IterResearch, an innovative agent paradigm (detailed below).** It unleashes the model's full reasoning potential by dynamically reconstructing a streamlined workspace in each turn, ensuring that every decision is deliberate and well-considered. Leveraging IterResearch, we constructed a set of trajectories that integrate reasoning, planning, and tool-use, thereby strengthening the model's capacity for sustained planning when confronted with complex 
 
-Through this process, we have created not just "problems", but "golden examples" of how to solve them in a step-by-step, methodical manner. This dataset, composed of rigorously selected, high-quality problem-solving examples, serves to fully unlock the model's potential in reasoning, planning, and tool use.
 
 ## Rollout Mode
 
@@ -138,17 +137,17 @@ Tongyi DeepResearch also has an extensive deep research agent family. 
 
 \[5\] [WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent](https://arxiv.org/pdf/2508.05748)
 
-\[6\] WebResearch: Unleashing reasoning capability in Long-Horizon Agents
+\[6\] [WebResearch: Unleashing reasoning capability in Long-Horizon Agents](https://arxiv.org/abs/2509.13309)
 
-\[7\] ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization
+\[7\] [ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization](https://arxiv.org/abs/2509.13313)
 
-\[8\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research
+\[8\] [WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](https://arxiv.org/abs/2509.13312)
 
-\[9\] WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning
+\[9\] [WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning](https://arxiv.org/abs/2509.13305)
 
-\[10\] Scaling Agents via Continual Pre-training
+\[10\] [Scaling Agents via Continual Pre-training](https://arxiv.org/abs/2509.13310)
 
-\[11\] Towards General Agentic Intelligence via Environment Scaling
+\[11\] [Towards General Agentic Intelligence via Environment Scaling](https://arxiv.org/abs/2509.13311)
 
 Our team has a long-standing commitment to the research and development of deep research agents. Over the past six months, we have consistently published one technical report per month, totaling five to date. Today, we are excited to simultaneously release six new reports and share our Tongyi DeepResearch-30B-A3B model with the community.
 
