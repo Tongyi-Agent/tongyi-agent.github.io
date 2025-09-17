@@ -64,6 +64,8 @@ In addition to the native ReAct mode, we have developed a "Heavy Mod
 
 The IterResearch paradigm was created to solve the "cognitive suffocation" and "noise pollution" that occurs when agents accumulate all information into a single, ever-expanding context. Instead, IterResearch deconstructs a task into a series of "research rounds".
 
+{{< figure src="/img/introducing-tongyi-deep-research/iter_research.png#center" width="100%">}}
+
 In each round, the agent reconstructs a streamlined workspace using only the most essential outputs from the previous round. Within this focused workspace, the agent analyzes the problem, integrates key findings into a continuously evolving central report, and then decides its next action—either gathering more information or providing a final answer. This iterative process of "synthesis and reconstruction" allows the agent to maintain a clear "cognitive focus" and high reasoning quality throughout long tasks.
 
 Building on this, we propose the Research-Synthesis framework. In this model, multiple Research Agents use the IterResearch process to explore a problem in parallel. A final Synthesis Agent then integrates their refined reports and conclusions to produce a more comprehensive final answer. This parallel structure enables the model to consider a wider range of research paths within a limited context window, pushing its performance to the limit.
