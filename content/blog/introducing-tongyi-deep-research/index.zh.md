@@ -18,8 +18,8 @@ showtoc: true
 在多个极高难度的信息检索和推理任务中，通义DeepResearch 取得了最先进的（SOTA）成绩：
 
 *   Humanity’s Last Exam (HLE)：32.9
-*   BrowseComp&#8209;EN：45.3
-*   BrowseComp&#8209;ZH：49.5
+*   BrowseComp&#8209;EN：43.4
+*   BrowseComp&#8209;ZH：46.7
 *   xBench&#8209;DeepSearch：75.0
 
 全面超越了目前所有的闭源及开源 Deep Research 智能体（Agent）。
