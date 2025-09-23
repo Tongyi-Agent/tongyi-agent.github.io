@@ -18,7 +18,8 @@ searchHidden: true
 
 ### 产品 & API
 
-{{< button href="https://www.aliyun.com/product/bailian" label="ALIBABA CLOUD" external=true >}}
+{{< button href="https://www.aliyun.com/product/bailian" label="阿里云百炼" external=true >}}
+{{< button href="https://bailian.console.aliyun.com/?tab=app#/app/app-market/deep-search/" label="通义深度研究产品 限时免费体验" external=true >}}
 
 ### 联系我们
 邮箱：<a href="mailto:yongjiang.jy@alibaba-inc.com">yongjiang.jy@alibaba-inc.com</a>
