@@ -41,10 +41,11 @@ To further reduce inconsistencies between the organized information stru
 
 Furthermore, we have developed an automated data engine to scale up the creation of PhD&#8209;level research questions. This engine begins with a multi&#8209;disciplinary knowledge base, generating "seed" QA pairs that require multi&#8209;source reasoning. Each seed then enters a self&#8209;guided loop of "iterative complexity upgrades", where a question&#8209;crafting agent is equipped with a powerful toolset including web search, academic retrieval, and a Python execution environment. In each iteration, the agent expands knowledge boundaries, deepens conceptual abstraction, and even constructs computational tasks, creating a virtuous cycle where the output of one round becomes the more complex input for the next, ensuring a controllable and systematic escalation of task difficulty.
 
-**Bootstrapping Agent Capabilities with SFT Cold&#8209;starting**
+**Unleashing Agent Capabilities with Diverse Reasoning Pattern**
 
-To bootstrap the model's initial capabilities, we constructed a set of SFT trajectories via rejection sampling, based on the ReAct and IterResearch frameworks (for details, see below). On one hand, ReAct, as a classic and foundational multi&#8209;turn reasoning format, instills rich reasoning behaviors and reinforces the model's ability to adhere to structured formats. **On the other hand, we introduce IterResearch, an innovative agent paradigm (detailed below).** It unleashes the model's full reasoning potential by dynamically reconstructing a streamlined workspace in each turn, ensuring that every decision is deliberate and well&#8209;considered. Leveraging IterResearch, we constructed a set of trajectories that integrate reasoning, planning, and tool&#8209;use, thereby strengthening the model's capacity for sustained planning when confronted with complex 
+To bootstrap the model's initial capabilities, we constructed a set of trajectories via rejection sampling, based on the ReAct and IterResearch frameworks (for details, see below). On one hand, ReAct, as a classic and foundational multi-turn reasoning format, instills rich reasoning behaviors and reinforces the model's ability to adhere to structured formats. 
 
+**On the other hand, we introduce IterResearch, an innovative agent paradigm (detailed below).** It unleashes the model's full reasoning potential by dynamically reconstructing a streamlined workspace in each turn, ensuring that every decision is deliberate and well-considered. Leveraging IterResearch, we constructed a set of trajectories that integrate reasoning, planning, and tool-use, thereby strengthening the model's capacity for sustained planning when confronted with Long-Horizon tasks.
 
 ## Rollout Mode
 
