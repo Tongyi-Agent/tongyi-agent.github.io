@@ -157,7 +157,7 @@ Stay tuned for our next generation of agentic models.
 ```bibtex
 @misc{tongyidr,
   author={Tongyi DeepResearch Team},
-  title={Tongyi-DeepResearch},
+  title={Tongyi DeepResearch: A New Era of Open-Source AI Researchers},
   year={2025},
   howpublished={\url{https://github.com/Alibaba-NLP/DeepResearch}}
 }
