@@ -168,7 +168,7 @@ IterResearch 范式的创建是为了解决Agent将所有信息堆积在一个�
 ```bibtex
 @misc{tongyidr,
   author={Tongyi DeepResearch Team},
-  title={Tongyi-DeepResearch},
+  title={Tongyi DeepResearch: A New Era of Open-Source AI Researchers},
   year={2025},
   howpublished={\url{https://github.com/Alibaba-NLP/DeepResearch}}
 }
