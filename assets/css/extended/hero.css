@@ -8,7 +8,7 @@
   left: 50%;
   right: 50%;
   top: -24px;
-  background: url('/img/hero.png') center/cover no-repeat;
+  background: url('https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/hero.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

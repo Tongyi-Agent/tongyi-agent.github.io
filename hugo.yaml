@@ -68,12 +68,12 @@ params:
 
   assets:
     disable_hljs: true
-    favicon: "/img/logo.png"
+    favicon: "https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/logo.png"
     theme_color: "#615CED"
 
   label:
     text: "Tongyi DeepResearch"
-    icon: "/img/logo.png"
+    icon: "https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/logo.png"
     iconHeight: 30
 
 menu:
