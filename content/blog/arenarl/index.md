@@ -27,7 +27,7 @@ However, in practice, we identified a critical failure mode in this a
 2.  **Signal Dominated by Noise:** As the policy model improves, the quality of responses tends to converge (e.g., all scoring between 0.8 and 0.9). The Reward Model struggles to distinguish subtle differences between high-quality responses. Consequently, random noise in the scoring process drowns out the true advantage signal, leading to stagnation or even degeneration during training.
     
 
-{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/img/arenarl/reward.png#center" width="100%">}}
+{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/arenarl/reward.png#center" width="100%">}}
 
 ## Core Method: ArenaRL — Relative Ranking via Tournaments
 
@@ -45,7 +45,7 @@ ArenaRL generates a group of candidate responses for a single query, 
 
 This mechanism reframes reward modeling as an **intra-group relative ranking** problem. Through quantile reward mapping, discrete rankings are converted into normalized **Advantage Signals**. Compared to absolute scores, relative ranking is inherently more robust to noise, capable of capturing subtle nuances between high-quality trajectories and effectively circumventing "Discriminative Collapse."
 
-{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/img/arenarl/method_final.png#center" width="100%">}}
+{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/arenarl/method_final.png#center" width="100%">}}
 
 ### 3. Topology Optimization: From Round-Robin to Seeded Single-Elimination
 

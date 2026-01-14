@@ -29,7 +29,7 @@ ArenaRL 究竟如何打破这一技术瓶颈？下文将深度解析其背后�
 2.  **信号淹没：** 随着策略模型能力提升，生成的回答质量普遍提高（例如都在 0.8-0.9 分之间），奖励模型难以区分高水平回答之间的细微优劣。此时，打分中的随机噪声会盖过真实的优势信号，导致训练优化停滞甚至模型退化。
     
 
-{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/img/arenarl/reward.png#center" width="100%">}}
+{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/arenarl/reward.png#center" width="100%">}}
 
 # 核心方法：ArenaRL —— 基于锦标赛机制的相对排序
 
@@ -47,7 +47,7 @@ ArenaRL 让智能体针对同一指令生成一组候选方案，构建一个�
 
 这种机制将奖励建模重构为组内相对排序问题，并通过分位奖励映射将离散排名转化为归一化的优势信号。相比于绝对分数，相对排序天然更能抵抗噪声，敏锐捕捉高质量轨迹间的细微差异，有效规避了训练后期的判别崩溃。
 
-{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/img/arenarl/method_final.png#center" width="100%">}}
+{{< figure src="https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/arenarl/method_final.png#center" width="100%">}}
 
 ## 拓扑结构优化：从全量循环到种子单败淘汰
 
