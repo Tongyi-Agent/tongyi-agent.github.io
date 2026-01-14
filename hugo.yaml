@@ -66,6 +66,9 @@ params:
   ShowShareButtons: false
   ShowPostNavLinks: true
 
+  # math
+  math: true
+
   assets:
     disable_hljs: true
     favicon: "https://cdn.jsdelivr.net/gh/Tongyi-Agent/tongyi-agent.github.io@main/static/img/logo.png"
