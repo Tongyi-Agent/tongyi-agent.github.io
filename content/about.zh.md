@@ -22,4 +22,4 @@ searchHidden: true
 {{< button href="https://bailian.console.aliyun.com/?tab=app#/app/app-market/deep-search/" label="通义深度研究产品 限时免费体验" external=true >}}
 
 ### 联系我们
-邮箱：<a href="mailto:yongjiang.jy@alibaba-inc.com">yongjiang.jy@alibaba-inc.com</a>
+邮箱：<a href="mailto:pangda@alibaba-inc.com">pangda@alibaba-inc.com</a>

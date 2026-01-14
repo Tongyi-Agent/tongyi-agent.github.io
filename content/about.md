@@ -19,3 +19,6 @@ We are the DeepResearch team at Tongyi Lab, dedicated to exploring cutting-edge 
 ### Products & API
 
 {{< button href="https://www.aliyun.com/product/bailian" label="ALIBABA CLOUD" external=true >}}
+
+### Contact Us
+Mail to: <a href="mailto:pangda@alibaba-inc.com">pangda@alibaba-inc.com</a>
